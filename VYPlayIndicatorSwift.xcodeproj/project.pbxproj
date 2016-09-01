@@ -8,12 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		D94785851D771A81007A74CE /* VYPlayIndicatorSwift.h in Headers */ = {isa = PBXBuildFile; fileRef = D94785831D771A81007A74CE /* VYPlayIndicatorSwift.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D947858D1D771AA6007A74CE /* VYPlayIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D947858C1D771AA6007A74CE /* VYPlayIndicator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		D94785801D771A81007A74CE /* VYPlayIndicatorSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = VYPlayIndicatorSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D94785831D771A81007A74CE /* VYPlayIndicatorSwift.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VYPlayIndicatorSwift.h; sourceTree = "<group>"; };
 		D94785841D771A81007A74CE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D947858C1D771AA6007A74CE /* VYPlayIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VYPlayIndicator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -30,6 +32,7 @@
 		D94785761D771A81007A74CE = {
 			isa = PBXGroup;
 			children = (
+				D947858B1D771A8A007A74CE /* Sources */,
 				D94785821D771A81007A74CE /* VYPlayIndicatorSwift */,
 				D94785811D771A81007A74CE /* Products */,
 			);
@@ -50,6 +53,14 @@
 				D94785841D771A81007A74CE /* Info.plist */,
 			);
 			path = VYPlayIndicatorSwift;
+			sourceTree = "<group>";
+		};
+		D947858B1D771A8A007A74CE /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				D947858C1D771AA6007A74CE /* VYPlayIndicator.swift */,
+			);
+			path = Sources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -95,6 +106,7 @@
 				TargetAttributes = {
 					D947857F1D771A81007A74CE = {
 						CreatedOnToolsVersion = 8.0;
+						LastSwiftMigration = 0800;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -131,6 +143,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D947858D1D771AA6007A74CE /* VYPlayIndicator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -239,6 +252,7 @@
 		D94785891D771A81007A74CE /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -250,6 +264,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = jp.sora0077.VYPlayIndicatorSwift;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -257,6 +272,7 @@
 		D947858A1D771A81007A74CE /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
