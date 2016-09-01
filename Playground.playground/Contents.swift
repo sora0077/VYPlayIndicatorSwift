@@ -8,7 +8,7 @@ import PlaygroundSupport
 PlaygroundPage.current.needsIndefiniteExecution = true
 
 
-let view = VYPlayerIndicatorView()
+let view = VYPlayIndicatorView()
 view.backgroundColor = .white
 view.frame.size.width = 100
 view.frame.size.height = 100

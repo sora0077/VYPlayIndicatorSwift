@@ -7,10 +7,10 @@ import UIKit
 
 
 @IBDesignable
-public class VYPlayerIndicatorView: UIView {
+public class VYPlayIndicatorView: UIView {
     
-    private lazy var indicator: VYPlayerIndicator = {
-        let indicator = VYPlayerIndicator()
+    private lazy var indicator: VYPlayIndicator = {
+        let indicator = VYPlayIndicator()
         indicator.frame = self.bounds
         self.layer.addSublayer(indicator)
         return indicator
@@ -21,7 +21,7 @@ public class VYPlayerIndicatorView: UIView {
         get { return indicator.color }
     }
     
-    public var state: VYPlayerIndicator.State {
+    public var state: VYPlayIndicator.State {
         set { indicator.state = newValue }
         get { return indicator.state }
     }

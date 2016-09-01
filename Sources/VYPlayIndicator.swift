@@ -10,7 +10,7 @@ private let pathKey = "path"
 private let opacityKey = "opacity"
 private let frameKey = "keyFrame"
 
-public class VYPlayerIndicator: CALayer {
+public class VYPlayIndicator: CALayer {
     
     public enum State {
         case stopped, playing, paused
@@ -191,7 +191,7 @@ public class VYPlayerIndicator: CALayer {
     }
 }
 
-extension VYPlayerIndicator: CAAnimationDelegate {
+extension VYPlayIndicator: CAAnimationDelegate {
     
     public func animationDidStop(_ anim: CAAnimation, finished flag: Bool) {
         guard !flag else { return }
@@ -201,7 +201,7 @@ extension VYPlayerIndicator: CAAnimationDelegate {
     }
 }
 
-extension VYPlayerIndicator {
+extension VYPlayIndicator {
     
     fileprivate func randomPaths(count: Int) -> [CGPath] {
         return (0..<count).map { _ in
@@ -229,7 +229,7 @@ extension VYPlayerIndicator {
     
 }
 
-extension VYPlayerIndicator {
+extension VYPlayIndicator {
     
     fileprivate func makePath(withPercentage factor: CGFloat) -> UIBezierPath {
         let origin = CGPoint(x: bounds.maxX * 0.25, y: bounds.height - bounds.height * factor / 100)
