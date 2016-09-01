@@ -65,7 +65,6 @@ public class VYPlayIndicator: CALayer {
     
     public override init(layer: Any) {
         super.init(layer: layer)
-        setup()
     }
     
     public required init?(coder aDecoder: NSCoder) {
