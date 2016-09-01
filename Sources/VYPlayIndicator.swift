@@ -85,9 +85,6 @@ public class VYPlayerIndicator: CALayer {
     }
     
     public func animatePlayback() {
-        
-        print("animatePlayback")
-        
         let opacity = CABasicAnimation(keyPath: opacityKey)
         opacity.toValue = 1
         opacity.fromValue = presentation()?.value(forKeyPath: opacityKey)
@@ -103,12 +100,8 @@ public class VYPlayerIndicator: CALayer {
         keyframe.autoreverses = true
         keyframe.repeatCount = Float.infinity
         
-        print("test")
-        
         let secondBeam = keyframe.copy() as! CAKeyframeAnimation
         let thirdBeam = keyframe.copy() as! CAKeyframeAnimation
-        
-        print(secondBeam)
         
         let count = 10
         
