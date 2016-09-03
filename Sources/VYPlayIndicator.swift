@@ -96,30 +96,30 @@ public class VYPlayIndicator: CALayer {
         opacity.fillMode = kCAFillModeBoth
         opacity.isRemovedOnCompletion = false
         
-        let keyframe = CAKeyframeAnimation(keyPath: pathKey)
-        keyframe.duration = 1.75
-        keyframe.beginTime = CACurrentMediaTime() + 0.35
-        keyframe.fillMode = kCAFillModeForwards
-        keyframe.isRemovedOnCompletion = false
-        keyframe.autoreverses = true
-        keyframe.repeatCount = Float.infinity
+        let firstKeyframe = CAKeyframeAnimation(keyPath: pathKey)
+        firstKeyframe.duration = 1.75
+        firstKeyframe.beginTime = CACurrentMediaTime() + 0.35
+        firstKeyframe.fillMode = kCAFillModeForwards
+        firstKeyframe.isRemovedOnCompletion = false
+        firstKeyframe.autoreverses = true
+        firstKeyframe.repeatCount = Float.infinity
         
-        let secondBeam = keyframe.copy() as! CAKeyframeAnimation
-        let thirdBeam = keyframe.copy() as! CAKeyframeAnimation
+        let secondKeyframe = firstKeyframe.copy() as! CAKeyframeAnimation
+        let thirdKeyframe = firstKeyframe.copy() as! CAKeyframeAnimation
         
         let count = 10
         
-        keyframe.values = randomPaths(count: count)
-        secondBeam.values = randomPaths(count: count)
-        thirdBeam.values = randomPaths(count: count)
+        firstKeyframe.values = randomPaths(count: count)
+        secondKeyframe.values = randomPaths(count: count)
+        thirdKeyframe.values = randomPaths(count: count)
         
-        keyframe.keyTimes = randomKeytimes(count: count)
-        secondBeam.keyTimes = randomKeytimes(count: count)
-        thirdBeam.keyTimes = randomKeytimes(count: count)
+        firstKeyframe.keyTimes = randomKeytimes(count: count)
+        secondKeyframe.keyTimes = randomKeytimes(count: count)
+        thirdKeyframe.keyTimes = randomKeytimes(count: count)
         
-        keyframe.timingFunctions = randomTimingFunctions(count: count)
-        secondBeam.timingFunctions = randomTimingFunctions(count: count)
-        thirdBeam.timingFunctions = randomTimingFunctions(count: count)
+        firstKeyframe.timingFunctions = randomTimingFunctions(count: count)
+        secondKeyframe.timingFunctions = randomTimingFunctions(count: count)
+        thirdKeyframe.timingFunctions = randomTimingFunctions(count: count)
         
         let begin = CABasicAnimation(keyPath: pathKey)
         begin.duration = 0.35
@@ -130,19 +130,19 @@ public class VYPlayIndicator: CALayer {
         let thirdBegin = begin.copy() as! CABasicAnimation
         
         begin.fromValue = firstBeam.presentation()?.value(forKeyPath: pathKey)
-        secondBegin.fromValue = self.secondBeam.presentation()?.value(forKeyPath: pathKey)
-        thirdBegin.fromValue = self.thirdBeam.presentation()?.value(forKeyPath: pathKey)
+        secondBegin.fromValue = secondBeam.presentation()?.value(forKeyPath: pathKey)
+        thirdBegin.fromValue = thirdBeam.presentation()?.value(forKeyPath: pathKey)
         
-        begin.toValue = keyframe.values?.first
-        secondBegin.toValue = secondBeam.values?.first
-        thirdBegin.toValue = thirdBeam.values?.first
+        begin.toValue = firstKeyframe.values?.first
+        secondBegin.toValue = secondKeyframe.values?.first
+        thirdBegin.toValue = thirdKeyframe.values?.first
         
-        self.firstBeam.add(begin, forKey: begin.keyPath)
-        self.firstBeam.add(keyframe, forKey: frameKey)
-        self.secondBeam.add(secondBegin, forKey: secondBegin.keyPath)
-        self.secondBeam.add(secondBeam, forKey: frameKey)
-        self.thirdBeam.add(thirdBegin, forKey: thirdBegin.keyPath)
-        self.thirdBeam.add(thirdBeam, forKey: frameKey)
+        firstBeam.add(begin, forKey: begin.keyPath)
+        firstBeam.add(firstKeyframe, forKey: frameKey)
+        secondBeam.add(secondBegin, forKey: secondBegin.keyPath)
+        secondBeam.add(secondKeyframe, forKey: frameKey)
+        thirdBeam.add(thirdBegin, forKey: thirdBegin.keyPath)
+        thirdBeam.add(thirdKeyframe, forKey: frameKey)
         
         add(opacity, forKey: opacity.keyPath)
     }
